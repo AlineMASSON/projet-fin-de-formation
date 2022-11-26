@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des triathletes{% endblock %}
+{% block nav_triathletes_list %}active{% endblock %}
+{% block body %}
+    <h1 class="text-center title mb-4">La liste des triathlètes</h1>
+
+    {% include "_flash_message.html.twig" %}
+        <div id="rounded-table" class="mb-4 p-0" >
+        <table class="table table-hover mb-0 bg-light h-100">
+            <thead class="table-secondary ">
+                <tr   class="table-dark text-center">
+                    <th colspan="5">Liste de tous les enregistrements</th>
+                </tr>
+                <tr>
+                    <th class="text-center">Id</th>
+                    <th>Palmares</th>
+                    <th class="col-1 text-center">Poids</th>
+                    <th class="col-1 text-center">Taille</th>
+                    <th class="col-1 text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for triathlete in triathletes %}
+                <tr>
+                    <td class="text-center">{{ triathlete.id }}</td>
+                    <td>{{ triathlete.palmares }}</td>
+                    <td class="col-1 text-center">{{ triathlete.weight }}</td>
+                    <td class="col-1 text-center">{{ triathlete.size }}</td>
+                    <td class="col-1">
+                    <div class="d-flex ">
+                        <a href="{{ path('app_back_triathlete_show', {'id': triathlete.id}) }}">{% include './assets/show.svg.twig' %}</a>
+                        <a href="{{ path('app_back_triathlete_edit', {'id': triathlete.id}) }}">
+                        {% include './assets/modify.svg.twig' %}</a>
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun enregistrement.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+{% endblock %}

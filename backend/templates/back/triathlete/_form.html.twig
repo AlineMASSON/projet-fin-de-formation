@@ -1,0 +1,12 @@
+<div class="border p-4 mb-4" id="rounded-table" >
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn px-0" id="formtriathlete" type="submit" >{% include './assets/save.svg.twig' %}</button>
+    {{ form_end(form) }}
+</div>
+<div class="border p-4" id="rounded-table">
+    {{ form_start(formU) }}
+        {{ form_widget(formU) }}
+        <button class="btn px-0" id="formuser" type="submit" >{% include './assets/save.svg.twig' %}</button>
+    {{ form_end(formU) }}
+</div>

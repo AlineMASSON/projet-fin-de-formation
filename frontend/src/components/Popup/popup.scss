@@ -1,0 +1,16 @@
+@use 'src/styles/vars';
+
+.popup {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(1.5rem);
+  background: vars.$dark-clear;
+  overflow-y: auto;
+}

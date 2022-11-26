@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du triathlète{% endblock %}
+
+{% block body %}
+    <h1 class="title text-center">Modification du triathlète</h1>
+
+    {{ include('back/triathlete/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+    <div class="d-flex">
+        <a class="mt-2" href="{{ path('app_back_triathlete_index') }}">{% include './assets/return.svg.twig' %}</a>
+
+        {{ include('back/triathlete/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

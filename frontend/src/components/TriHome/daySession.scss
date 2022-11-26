@@ -1,0 +1,53 @@
+@use 'src/styles/vars';
+
+.day__session {
+  display: flex;
+  align-items: center;
+  background: vars.$color-back;
+  box-shadow: vars.$shadow-button;
+  border-radius: 1.5rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.day__session:hover {
+  background-color: vars.$color-hover;
+  color: vars.$color-main;
+}
+
+.day__session:active {
+  background-color: vars.$color-main;
+  color: vars.$light;
+}
+
+.swim {
+  background-color: vars.$color-alt-1-clear;
+}
+
+.bike {
+  background-color: vars.$color-alt-4-clear;
+}
+
+.run {
+  background-color: vars.$color-alt-3-clear;
+}
+
+.tri {
+  background-color: vars.$color-main-clear;
+}
+
+.session {
+  &__title {
+    width: fit-content;
+    height: 100%;
+    overflow: hidden;
+    padding: 0.3rem;
+    text-transform: capitalize;
+  }
+
+  &__logo {
+    width: 1.5rem;
+    height: fit-content;
+  }
+}

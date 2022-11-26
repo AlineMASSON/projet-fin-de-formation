@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des coachs{% endblock %}
+{% block nav_coachs_list %}active{% endblock %}
+
+{% block body %}
+    <h1 class="text-center title mb-4">La liste des coachs</h1>
+
+    {% include "_flash_message.html.twig" %}
+
+    <div id="rounded-table" class="mb-4 p-0" >
+        <table class="table table-hover mb-0 bg-light h-100">
+        <thead class="table-secondary">
+            <tr class="table-dark text-center">
+                <th colspan="7">Liste de tous les enregistrements</th>          
+            </tr>
+            <tr>
+                <th class="text-center">Id</th>
+                <th>Natation</th>
+                <th>Cyclisme</th>
+                <th>Course à pied</th>
+                <th>Expérience</th>
+                <th>Disponibilité</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for coach in coaches %}
+            <tr>
+                <td class="text-center">{{ coach.id }}</td>
+                <td>{{ coach.swim ? 'Oui' : 'Non' }}</td>
+                <td>{{ coach.bike ? 'Oui' : 'Non' }}</td>
+                <td>{{ coach.run ? 'Oui' : 'Non' }}</td>
+                <td>{{ coach.experience }}</td>
+                <td>{{ coach.isAvailable ? 'Oui' : 'Non' }}</td>
+                <td>
+                    <div class="d-flex">
+                    <a href="{{ path('app_back_coach_show', {'id': coach.id}) }}">{% include './assets/show.svg.twig' %}</a>
+                    <a href="{{ path('app_back_coach_edit', {'id': coach.id}) }}">{% include './assets/modify.svg.twig' %}</a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucun enregistrement.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

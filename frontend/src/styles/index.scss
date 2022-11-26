@@ -1,0 +1,26 @@
+@use 'reset';
+@use 'vars';
+
+body {
+  font-family: vars.$font-text;
+  // background: vars.$color-main;
+  // background-image: radial-gradient(at 37% 24%, vars.$color-alt-1 0px, transparent 50%),
+  // radial-gradient(at 70% 79%, vars.$color-alt-2 0px, transparent 50%),
+  // radial-gradient(at 87% 74%, vars.$color-alt-3 0px, transparent 50%),
+  // radial-gradient(at 78% 38%, vars.$color-alt-4 0px, transparent 50%);
+  background: vars.$color-alt-1;
+  background-image: radial-gradient(at 37% 24%, vars.$color-alt-2 0px, transparent 50%),
+  radial-gradient(at 70% 79%, vars.$color-alt-3 0px, transparent 50%),
+  radial-gradient(at 87% 74%, vars.$color-main 0px, transparent 50%),
+  radial-gradient(at 78% 38%, vars.$color-alt-4 0px, transparent 50%);
+  background-attachment: fixed;
+  padding: 2rem;
+  line-height: 1.5rem;
+  color: vars.$color-text;
+}
+
+.link {
+  color: vars.$color-main;
+  font-size: 1.5rem;
+  text-shadow: vars.$shadow-text;
+}

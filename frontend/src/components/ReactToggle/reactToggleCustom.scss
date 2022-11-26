@@ -1,0 +1,55 @@
+@use 'src/styles/vars';
+
+// React-Toggle
+.toggle {
+  display: flex;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+
+  &__content {
+    padding-left: 1rem;
+  }
+}
+
+.react-toggle-track {
+  background: vars.$color-back;
+  box-shadow: vars.$shadow-toggle;
+  transition: background-color 0.75s;
+}
+
+.react-toggle-thumb {
+  background: vars.$color-back;
+  box-shadow: vars.$shadow-button;
+  border: none;
+}
+
+.react-toggle-screenreader-only:checked ~ .react-toggle-thumb {
+  background: vars.$color-main;
+  box-shadow: vars.$shadow-button;
+}
+
+.react-toggle--checked .react-toggle-track {
+  background-color: vars.$color-main;
+}
+.react-toggle--checked .react-toggle-thumb {
+  background-color: vars.$color-main;
+  border-color: transparent;
+  box-shadow: vars.$shadow-button;
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: vars.$color-hover;
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-thumb {
+  background-color: vars.$color-main;
+  box-shadow: vars.$shadow-button;
+
+}
+.react-toggle--focus .react-toggle-thumb {
+  box-shadow: vars.$shadow-button;
+}
+
+.react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+  box-shadow: vars.$shadow-button;
+}

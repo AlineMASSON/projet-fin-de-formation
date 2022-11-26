@@ -1,0 +1,45 @@
+@use 'src/styles/vars';
+
+.login {
+  &__popup {
+    background: vars.$color-back;
+    box-shadow: vars.$shadow-button;
+    border-radius: 1.5rem;
+    margin: auto;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.error {
+  background-color: vars.$color-alt-4-clear;
+  box-shadow: vars.$shadow-button;
+  color: vars.$color-alt-4;
+  text-shadow: 2px 2px 4px vars.$color-hover;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  width: fit-content;
+  margin:0 auto 1rem;
+}
+
+/** === RESPONSIVE === **/
+
+/* === SMARTPHONE === */
+
+@media screen and (max-width:767px) {
+  
+}
+
+/* === TABLET & DESKTOP === */
+
+@media screen and (min-width:768px) {
+  .login__popup {
+    width: 30%;
+  }
+}

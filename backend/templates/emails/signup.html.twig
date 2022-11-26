@@ -1,0 +1,44 @@
+{# templates/emails/signup.html.twig #}
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=K2D:wght@400;700&family=Nova+Cut&display=swap" rel="stylesheet">
+<style>
+    .bestBackGroundEver {
+        background: #6D77B8;
+        background-image: radial-gradient(at 37% 24%, #75CBF0 0px, transparent 50%),
+        radial-gradient(at 70% 79%, #E5C3DE 0px, transparent 50%),
+        radial-gradient(at 87% 74%, #EB5781 0px, transparent 50%),
+        radial-gradient(at 78% 38%, #F2EA68 0px, transparent 50%);
+        background-attachment: fixed;
+        text-align:center;
+    }
+    .title {
+        font-family: 'Nova Cut', cursive;
+        color: #D39B53;
+        text-shadow: black 1px 0 6px;
+        font-size: 4rem;
+        font-weight: bold;
+    }
+    p{
+        font-size:1.5rem;
+    }
+    h2{
+        font-size:3rem;
+    }
+</style>
+<body class="bestBackGroundEver">
+<h1 class="title">Uptrain</h1>
+
+ 
+<h2 >Bienvenue {{ firstname }} {{ name }}!</h2>
+
+<p>
+    Votre inscription vient d'être prise en compte.<br>
+    Vous vous êtes enregistré avec l'addresse email suivante:
+</p>
+<p><code>{{ email.to[0].address }}</code></p>
+<p>Nous vous souhaitons une bonne navigation et utilisation sur UpTrain<br>
+Nous sommes à votre disposition si vous rencontrez le moindre soucis<br>
+Cordialement<br>
+L'équipe Uptrain<p>
+</body>

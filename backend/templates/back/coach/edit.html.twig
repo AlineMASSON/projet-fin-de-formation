@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du coach{% endblock %}
+
+{% block body %}
+    <h1  class="text-center title mx-10">Modification du coach</h1>
+
+    {{ include('back/coach/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+    <div class="d-flex">
+    <a class="pt-2" href="{{ path('app_back_coach_index') }}">{% include './assets/return.svg.twig' %}</a>
+
+    {{ include('back/coach/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

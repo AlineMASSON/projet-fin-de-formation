@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des entraînements{% endblock %}
+{% block nav_trainings_list %}active{% endblock %}
+{% block body %}
+    <h1 class="text-center title mb-4">La liste des entraînements</h1>
+
+    {% include "_flash_message.html.twig" %}
+
+   <div id="rounded-table" class="mb-4 p-0" >
+        <table class="table table-hover mb-0 bg-light h-100">
+        <thead class="table-secondary">
+            <tr class="table-dark text-center">
+                <th colspan="10">Liste de tous les enregistrements</th>          
+            </tr>
+            <tr>
+                <th class="text-center">Id</th>
+                <th>Titre</th>
+                <th>Date</th>
+                <th>Sport</th>
+                <th>Ppg</th>
+                <th>Ressenti</th>
+                <th>Type</th>
+                <th>Validation</th>
+                <th>Tag</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for training in trainings %}
+            <tr>
+                <td class="text-center">{{ training.id }}</td>
+                <td>{{ training.title }}</td>
+                <td>{{ training.date ? training.date|date('Y-m-d') : '' }}</td>
+                <td>{{ training.sport }}</td>
+                <td>{{ training.isPpg ? 'Oui' : 'Non' }}</td>
+                <td>{{ training.feeling }}</td>
+                <td>{{ training.type }}</td>
+                <td>{{ training.isValidated ? 'Oui' : 'Non' }}</td>
+                <td>{{ training.tag }}</td>
+                <td>
+                <div class="d-flex">
+                    <a href="{{ path('app_back_training_show', {'id': training.id}) }}">
+                    {% include './assets/show.svg.twig' %}</a>
+                    {{ include('back/training/_delete_form.html.twig') }}
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">Aucun enregistrement.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

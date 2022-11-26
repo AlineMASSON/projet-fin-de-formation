@@ -1,0 +1,31 @@
+@use 'src/styles/vars';
+
+.btn {
+  border: none;
+  background: vars.$color-back;
+  box-shadow: vars.$shadow-button;
+  border-radius: 2rem;
+  height: fit-content;
+  width: fit-content;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-shadow: vars.$shadow-text;
+  color: vars.$color-main;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.btn:hover {
+  background-color: vars.$color-hover;
+  color: vars.$color-main;
+}
+
+.btn:active {
+  background-color: vars.$color-main;
+  color: vars.$light;
+}
+
+.btn:has(.icon) {
+  height: 3rem;
+  width: 3rem;
+  padding: 0.8rem;
+}

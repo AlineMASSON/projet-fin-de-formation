@@ -1,0 +1,152 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BackOffice UpTrain{% endblock %}
+{% block nav_main_home %}active{% endblock %}
+{% block body %}
+<style>
+@media screen and (min-width: 1200px) {
+    .table--width {
+        width: 49% !important;
+    }
+    
+}
+
+</style>
+    <h1 class="text-center title mx-10 mb-5">Bienvenue sur le back office</h1>
+
+ <div class="d-flex flex-column flex-xl-row justify-content-xl-between flex-xl-wrap" >
+    <div id="rounded-table" class="table--width mb-4 p-0" >
+        <table class="table table-hover mb-0 bg-light h-100">
+                <thead class="table-secondary">
+                <tr class="table-dark text-center">
+                    <th colspan="3">Triathlètes récents</th>
+                </tr>
+                <tr>
+                    <th class="col-5">Nom</th>
+                    <th class="col-5">Prénom</th>
+                    <th class="col-2 text-center">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for triathlete in triathletes %}
+                    <tr>
+                        <td>{{ triathlete.user.lastname }}</td>
+                        <td>{{ triathlete.user.firstname }}</td>
+                        <td>
+                            <div class="d-flex">
+                            <a href="{{ path('app_back_triathlete_show', {'id': triathlete.id}) }}">{% include './assets/show.svg.twig' %}</a>
+                            <a class="ml-2 pt-2" href="{{ path('app_back_triathlete_edit', {'id': triathlete.id}) }}">{% include './assets/modify.svg.twig' %}</a>
+                            {{ include('/back/triathlete/_delete_form.html.twig') }}
+                            </div>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">Aucun enregistrement..</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+    </div>
+    <div id="rounded-table" class="table--width mb-4 p-0" >
+        <table class="table table-hover mb-0 bg-light h-100">
+        <thead class="table-secondary">
+        <tr class="table-dark text-center">
+            <th colspan="3">Coachs récents</th>
+        </tr>
+        <tr>
+            <th class="col-5">Nom</th>
+            <th class="col-5">Prénom</th>
+            <th class="col-2 text-center">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for coach in coachs %}
+            <tr>
+                <td>{{ coach.user.lastname }}</td>
+                <td>{{ coach.user.firstname }}</td>
+                <td>
+                <div class="d-flex">
+                    <a href="{{ path('app_back_coach_show', {'id': coach.id}) }}">{% include './assets/show.svg.twig' %}</a>
+                    <a class="ml-2 pt-2" href="{{ path('app_back_coach_edit', {'id': coach.id}) }}">{% include './assets/modify.svg.twig' %}</a>
+                    {{ include('/back/coach/_delete_form.html.twig') }}
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun enregistrement.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <div id="rounded-table" class="table--width mb-4 p-0" >
+        <table class="table table-hover mb-0 bg-light h-100">
+        <thead class="table-secondary">
+        <tr class="table-dark text-center">
+            <th colspan="3">Entraînements récents</th>
+        </tr>
+        <tr>
+            <th class="col-5">Titre</th>
+            <th class="col-5">Sport</th>
+            <th class="col-2  text-center">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for training in trainings %}
+            <tr>
+                <td>{{ training.title }}</td>
+                <td>{{ training.sport }}</td>
+                <td>
+                <div class="d-flex">
+                    <a href="{{ path('app_back_training_show', {'id': training.id}) }}">
+                    {% include './assets/show.svg.twig' %}</a>
+                    {{ include('/back/training/_delete_form.html.twig') }}
+                    </div>
+                </td>
+            </tr>
+            
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun enregistrement.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <div id="rounded-table" class="table--width mb-4 p-0" >
+        <table class="table table-hover mb-0 bg-light h-100">
+        <thead class="table-secondary">
+            <tr class="table-dark text-center">
+                <th colspan="3">Commentaires récents</th>
+            </tr>
+            <tr >
+                <th class="col-1  text-center">Id</th>
+                <th class="col-9">Contenu</th>
+                <th class="col-2  text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for review in reviews %}
+            <tr>
+                <td class="text-center">{{ review.id }}</td>
+                <td>{{ review.content | u.truncate(40) }}...</td>
+                <td>
+                <div class="d-flex">
+                    <a href="{{ path('app_back_training_show', {'id': review.training.id}) }}">
+                    {% include './assets/show.svg.twig' %}</a>
+                    {{ include('/back/review/_delete_form.html.twig') }}
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun enregistrement.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+{% endblock %}

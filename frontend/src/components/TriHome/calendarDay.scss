@@ -1,0 +1,41 @@
+@use 'src/styles/vars';
+
+.calendar__day {
+  background: vars.$color-back;
+  box-shadow: vars.$shadow-button;
+  border-radius: 1.5rem;
+  flex: 1;
+}
+
+.day__title {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/** === RESPONSIVE === **/
+
+/* === SMARTPHONE === */
+
+@media screen and (max-width:767px) {
+  .calendar__day {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .calendar__day:last-child {
+    margin: 0;
+  }
+}
+
+/* === TABLET & DESKTOP === */
+
+@media screen and (min-width:768px) {
+  .calendar__day {
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+
+  }
+  .calendar__day:first-child {
+    margin: 0;
+  }
+}

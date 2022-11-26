@@ -1,0 +1,43 @@
+@use 'src/styles/vars';
+
+.home__popup {
+  background: vars.$color-back;
+  box-shadow: vars.$shadow-button;
+  border-radius: 1.5rem;
+  margin: auto;
+  padding: 1rem;
+  width: 100%;
+}
+
+.popup__button {
+  display: flex;
+  justify-content: center;
+}
+
+.password--legend {
+  font-size: 0.8rem;
+  padding-left: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1rem;
+}
+
+.home__popup .field__input:has(input[name="password"]) {
+  margin-bottom: 0;
+}
+
+/** === RESPONSIVE === **/
+
+/* === SMARTPHONE === */
+
+@media screen and (max-width:767px) {
+
+
+}
+
+/* === TABLET & DESKTOP === */
+
+@media screen and (min-width:768px) {
+  .home__popup {
+    width: 40%;
+  }
+}

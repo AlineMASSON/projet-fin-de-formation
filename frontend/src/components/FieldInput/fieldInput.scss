@@ -1,0 +1,62 @@
+@use 'src/styles/vars';
+
+.field__input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  
+  input {
+    color: vars.$color-text;
+    background: vars.$color-back;
+    box-shadow: vars.$shadow-button;
+    border-radius: 1.5rem;
+    border: none;
+    padding: 1rem;
+  }
+}
+
+.field__input input:focus {
+  background: vars.$color-hover;
+}
+
+.input__text {
+  padding-left: 1rem;
+}
+
+/* File */
+
+.input-file {
+  cursor: pointer;
+  background: vars.$color-back;
+  box-shadow: vars.$shadow-button;
+  border-radius: 2rem;
+  height: fit-content;
+  width: fit-content;
+  padding: 1rem;
+  text-shadow: vars.$shadow-text;
+  color: vars.$color-main;
+  transition: color 0.75s;
+}
+
+.input-file:hover {
+  color: vars.$color-hover;
+  text-shadow: vars.$shadow-text;
+
+}
+
+input[type=file] {
+  display: none;
+}
+
+// suppression flèches input type number
+input[type=number] {
+  /* Firefox */
+  -moz-appearance: textfield;
+  
+  /* Chrome */
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin:0;
+  }
+}

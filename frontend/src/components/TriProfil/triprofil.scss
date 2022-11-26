@@ -1,0 +1,149 @@
+@use 'src/styles/vars';
+
+.profil {
+  &__description {
+    margin: 2rem 0;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 0;
+  }
+}
+
+.description:nth-child(1) > .description__title {
+  margin-bottom: 0;
+}
+
+.button--icon {
+  height: 1.5rem;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.infos .profil__infos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.description__info {
+  padding: 0.25rem 1.5rem 0 0;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.triprofil > .warningMessage {
+  position: fixed;
+  left: 50vw;
+  transform: translate(-50%, -2rem);
+}
+
+/** === RESPONSIVE === **/
+
+/* === SMARTPHONE === */
+
+@media screen and (max-width:767px) {
+  .profil__description,
+  .buttons {
+    width: 100%;
+  }
+
+  .description {
+    &__title {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+  
+    &__picture {
+      display: flex;
+      justify-content: center;
+      background: vars.$color-back;
+      box-shadow: vars.$shadow-button;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      margin-right: 1rem;
+    }
+    
+    &__infos {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+    }
+  }
+
+  .picture {
+    &--avatar-tri {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+    }
+  }
+}
+
+/* === TABLET & DESKTOP === */
+
+@media screen and (min-width:768px) {
+  .profil {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .profil__description,
+  .buttons {
+    width: 48%;
+  }
+
+  .description {
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+  
+    &__picture {
+      display: flex;
+      justify-content: center;
+      background: vars.$color-back;
+      box-shadow: vars.$shadow-button;
+      width: 13rem;
+      height: 13rem;
+      border-radius: 50%;
+      margin-right: 1rem;
+    }
+    
+    &__infos {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+  }
+  
+  .picture {
+    &--avatar-tri {
+      width: 13rem;
+      height: 13rem;
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@use 'src/styles/vars';
+
+.trihome__title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+
+  span {
+    text-transform: capitalize;
+  }
+}
+
+.header__button {
+  margin: 0;
+}
+
+.training__change {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.training__change:hover {
+  background: vars.$color-back;
+
+}
+
+.training__change .btn {
+  box-shadow: none;
+  background-color: transparent;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.training__change .btn:first-child {
+  border-radius: 2rem 0 0 2rem;
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+.training__change .btn:last-child {
+  border-radius: 0 2rem 2rem 0;
+  text-align: right;
+  padding-right: 1.5rem;
+}
+
+.training__change .btn:hover {
+  background-color: vars.$color-hover;
+  box-shadow: vars.$shadow-button;
+}
+
+.training__change .btn:active {
+  background-color: vars.$color-main;
+  color: vars.$light;
+}
+
+/** === RESPONSIVE === **/
+
+/* === SMARTPHONE === */
+
+@media screen and (max-width:767px) {
+  .desktop {
+    display: none;
+  }
+
+  .header__button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* === TABLET & DESKTOP === */
+
+@media screen and (min-width:768px) {
+  .phone {
+    display: none;
+  }
+
+  .training {
+    width: 100%;
+  
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 0.5rem;
+    }
+
+    &__change {
+      width: 20vw;
+      margin: 1.5rem auto;
+
+      > .btn {
+        width: 100%;
+      }
+    }
+  }
+}

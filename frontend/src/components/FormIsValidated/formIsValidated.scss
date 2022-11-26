@@ -1,0 +1,14 @@
+@use 'src/styles/vars';
+
+.popup__formIsValidated {
+  background: vars.$color-back;
+  box-shadow: vars.$shadow-button;
+  border-radius: 1.5rem;
+  margin: auto;
+  padding: 1rem;
+}
+
+.formIsValidated__buttons {
+  display: flex;
+  justify-content: center;
+}

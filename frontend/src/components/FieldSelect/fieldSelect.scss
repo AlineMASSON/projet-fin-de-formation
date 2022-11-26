@@ -1,0 +1,33 @@
+@use 'src/styles/vars';
+
+.field__select {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  
+  select {
+    color: vars.$color-text;
+    appearance: none;
+    background: url('src/assets/icon/arrow.svg')
+    no-repeat right 1rem center / 1.4em;
+    cursor: pointer;
+    background-color: vars.$color-back;
+    box-shadow: vars.$shadow-button;
+    border-radius: 1.5rem;
+    border: none;
+    padding: 1rem;
+    outline: none;
+  }
+
+  option {
+    background-color: vars.$color-alt-2;
+  }
+}
+
+.select__text {
+  padding-left: 1rem;
+}
+
+.field__input select:focus {
+  background: vars.$color-hover;
+}

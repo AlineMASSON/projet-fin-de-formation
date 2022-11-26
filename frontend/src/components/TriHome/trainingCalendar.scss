@@ -1,0 +1,26 @@
+@use 'src/styles/vars';
+
+.training__calendar  {
+  padding: 1rem;
+  background: vars.$color-back;
+  box-shadow: vars.$shadow-button;
+  border-radius: 1.5rem;
+  min-height: 15rem;
+}
+
+/** === RESPONSIVE === **/
+
+/* === SMARTPHONE === */
+
+@media screen and (max-width:767px) {
+
+}
+
+/* === TABLET & DESKTOP === */
+
+@media screen and (min-width:768px) {
+  .training__calendar  {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,14 @@
+.popup {  
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+
+    &__title {
+        align-self: center;
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}

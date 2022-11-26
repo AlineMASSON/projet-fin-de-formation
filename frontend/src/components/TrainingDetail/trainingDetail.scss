@@ -1,0 +1,24 @@
+@use 'src/styles/vars';
+
+.training__detail {
+    background: vars.$color-back;
+    box-shadow: vars.$shadow-button;
+    border-radius: 1.5rem;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.popup {
+    &__label {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  
+    &__training-detail {
+      background: vars.$color-back;
+      box-shadow: vars.$shadow-button;
+      border-radius: 1.5rem;
+      margin-top: 1rem;
+      padding: 1rem;
+    }
+}

@@ -1,0 +1,39 @@
+@use 'src/styles/vars';
+
+.popup {
+  &__training {
+    background: vars.$color-back;
+    box-shadow: vars.$shadow-button;
+    border-radius: 1.5rem;
+    padding: 1rem;
+  }
+
+  &__training-detail {
+    background: vars.$color-back;
+    box-shadow: vars.$shadow-button;
+    border-radius: 1.5rem;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+
+  &__training-toggle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: vars.$color-back;
+    box-shadow: vars.$shadow-button;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.author {
+  text-align: right;
+  margin-bottom: 1rem;
+}

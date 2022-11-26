@@ -1,0 +1,35 @@
+@use 'src/styles/vars';
+
+.yes-no__popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(1.5rem);
+  overflow-y: auto;
+}
+
+.content {
+  background: vars.$color-back;
+  box-shadow: vars.$shadow-button;
+  border-radius: 1.5rem;
+  padding: 1rem;
+
+  &__answer {
+    text-align: center;
+    margin: auto;
+    font-size: 1.2rem;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,27 @@
+@use 'src/styles/vars';
+
+.popup {
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/** === RESPONSIVE === **/
+
+/* === SMARTPHONE === */
+
+@media screen and (max-width:767px) {
+  .popup:has(.popup__training) {
+    display: block;
+  }
+}
+  
+/* === TABLET & DESKTOP === */
+
+@media screen and (min-width:768px) {
+  .popup__training {
+    width: 50%;
+    margin: auto;
+  }
+}

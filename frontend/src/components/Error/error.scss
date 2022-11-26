@@ -1,0 +1,55 @@
+@use 'src/styles/vars';
+
+.not-found__error {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: calc(100vh - 4rem);
+}
+
+.error {
+  &__title {
+    text-align: center;
+    text-shadow: vars.$shadow-text;
+    color: vars.$color-main;
+  }
+  &__content {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+/** === RESPONSIVE === **/
+
+/* === SMARTPHONE === */
+
+@media screen and (max-width:767px) {
+  .error {
+    &__title {
+      font-size: 7rem;
+      line-height: 4rem;
+      &--logo {
+        height: 5rem;
+      }
+    }
+
+  }
+}
+
+/* === TABLET & DESKTOP === */
+
+@media screen and (min-width:768px) {
+
+  .not-found__error {
+    text-align: center;
+  }
+  .error {
+    &__title {
+      font-size: 10rem;
+      &--logo {
+        height: 7rem;
+      }
+    }
+  
+  }
+}

@@ -1,0 +1,26 @@
+@use 'src/styles/vars';
+
+.field__textarea {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  textarea {
+    background: vars.$color-back;
+    box-shadow: vars.$shadow-button;
+    border-radius: 1.5rem;
+    border: none;
+    padding: 1rem;
+    outline: none;
+    height: 10rem;
+    color: vars.$color-text;
+  }
+}
+
+.textarea__text {
+  padding-left: 1rem;
+}
+
+.field__input textarea:focus {
+  background: vars.$color-hover;
+}

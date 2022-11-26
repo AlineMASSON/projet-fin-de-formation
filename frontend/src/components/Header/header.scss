@@ -1,0 +1,64 @@
+@use 'src/styles/vars';
+
+.header {
+  display: flex;
+  align-items: center;
+  &__logo {
+    display: flex;
+    justify-content: center;
+    background: vars.$color-back;
+    box-shadow: vars.$shadow-button;
+    height: inherit;
+    aspect-ratio: 1 / 1;
+    
+    &--picture {
+        width: fit-content;
+    }
+  }
+
+  &__title {
+    font-family: vars.$font-uptrain;
+    color: vars.$color-main;
+    text-shadow: vars.$shadow-text;
+  }
+}
+
+/** === RESPONSIVE === **/
+
+/* === SMARTPHONE === */
+
+@media screen and (max-width:767px) {
+  
+  .header {
+     height: 8vh;
+
+    &__logo {
+      border-radius: 1rem;
+      padding: 0.5rem;
+    }
+    
+    &__title {
+      font-size: 5vh;
+      padding: 2vh;
+      
+    }
+  }
+}
+
+  /* === TABLET & DESKTOP === */
+
+@media screen and (min-width:768px) {
+
+  .header {
+    height: 15vh;
+
+    &__logo {
+      border-radius: 1.5rem;
+      padding: 1rem;
+    }
+    &__title {
+      font-size: 5vw;
+      padding: 2vw;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des commentaires{% endblock %}
+{% block nav_reviews_list %}active{% endblock %}
+
+{% block body %}
+    <h1 class="text-center title mb-4">La liste des commentaires</h1>
+
+    {% include "_flash_message.html.twig" %}
+
+    <div id="rounded-table" class="table--width mb-4 p-0" >
+        <table class="table table-hover mb-0 bg-light h-100">
+        <thead class="table-secondary">
+            <tr class="table-dark text-center">
+                <th colspan="4">Liste de tous les enregistrements</th>          
+            </tr>
+            <tr>
+                <th class="col-1 text-center">Id</th>
+                <th class="col-8 text-center">Contenu</th>
+                <th class="col-2 text-center">Créé le</th>
+                <th class="col-1 text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for review in reviews %}
+            <tr >
+                <td class="text-center">{{ review.id }}</td>
+                <td>{{ review.content }}</td>
+                <td>{{ review.createdAt ? review.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                <div class="d-flex">
+                    <a href="{{ path('app_back_training_show', {'id': review.training.id}) }}">{% include './assets/show.svg.twig' %}</a>
+                    {{ include('back/review/_delete_form.html.twig') }}
+                </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun enregistrement.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

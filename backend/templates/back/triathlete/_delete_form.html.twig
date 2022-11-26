@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_back_triathlete_delete', {'id': triathlete.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ triathlete.id) }}">
+    <button class="btn">{% include './assets/delete.svg.twig' %}</button>
+</form>

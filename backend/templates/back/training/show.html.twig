@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entraînement{% endblock %}
+
+{% block body %}
+    <h1 class="text-center p-2 mx-10 title mb-4">Entraînement n°{{ training.id }}</h1>
+
+    <div class="bg-light p-4" id="rounded-table">
+        <table class="table bg-light">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ training.id }}</td>
+                </tr>
+                <tr>
+                    <th>Titre</th>
+                    <td>{{ training.title }}</td>
+                </tr>
+                <tr>
+                    <th>Durée en minutes</th>
+                    <td>{{ training.duration }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ training.description }}</td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td>{{ training.date ? training.date|date('d-m-Y') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Sport</th>
+                    <td>{{ training.sport }}</td>
+                </tr>
+                <tr>
+                    <th>Ppg</th>
+                    <td>{{ training.isPpg ? 'Oui' : 'Non' }}</td>
+                </tr>
+                <tr>
+                    <th>Ressenti</th>
+                    <td>{{ training.feeling }}</td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td>{{ training.type }}</td>
+                </tr>
+                <tr>
+                    <th>Validation</th>
+                    <td>{{ training.isValidated ? 'Oui' : 'Non' }}</td>
+                </tr>
+                <tr>
+                    <th>Tag</th>
+                    <td>{{ training.tag }}</td>
+                </tr>
+                <tr>
+                    <th colspan="2" class="text-center table-secondary">Liste des commentaires associés</th>
+                </tr>
+                <tr>
+                    <td class="text-decoration-underline">Id</td>
+                    <td class="text-decoration-underline">Contenu</td>
+                </tr>
+                {% for review in training.reviews %}
+                <tr>
+                    <td>{{ review.id }}</td>
+                    <td>{{ review.content }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">Aucun enregistrement.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="d-flex p-2">
+        <a class="mt-2" href="{{ path('app_back_training_index') }}">{% include './assets/return.svg.twig' %}</a>
+        {{ include('back/training/_delete_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

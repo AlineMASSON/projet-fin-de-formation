@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="stylesheet" href="https://bootswatch.com/5/pulse/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=K2D:wght@400;700&family=Nova+Cut&display=swap" rel="stylesheet">
+        <style>
+            .bestBackGroundEver {
+                background: #6D77B8;
+                background-image: radial-gradient(at 37% 24%, #75CBF0 0px, transparent 50%),
+                radial-gradient(at 70% 79%, #E5C3DE 0px, transparent 50%),
+                radial-gradient(at 87% 74%, #EB5781 0px, transparent 50%),
+                radial-gradient(at 78% 38%, #F2EA68 0px, transparent 50%);
+                background-attachment: fixed;
+            }
+            .btn-login {
+                background: #6D77B8;
+                background-image: radial-gradient(at 37% 24%, #75CBF0 0px, transparent 50%),
+                radial-gradient(at 70% 79%, #E5C3DE 0px, transparent 50%),
+                radial-gradient(at 87% 74%, #EB5781 0px, transparent 50%),
+                radial-gradient(at 78% 38%, #F2EA68 0px, transparent 50%);
+            }
+            .btn-update {
+                background: #D39B53;
+                padding: 5px;
+                border: 1px black solid;
+                border-radius: 5px 2px;
+            }
+            .title {
+                font-family: 'Nova Cut', cursive;
+                color: #D39B53;
+                text-shadow: black 1px 0 10px;
+                font-size: 4rem;
+                font-weight: bold;
+            }
+            .template404title {
+                font-family: 'Nova Cut', cursive;
+                color: black;
+                text-shadow: #D39B53 1px 0 12px;
+                font-size: 6rem;
+                font-weight: bold;
+            }
+            #rounded-table {
+                -webkit-border-radius: 23px;
+                -moz-border-radius: 23px;
+                border-radius: 23px;
+                overflow:hidden;
+            }
+            .template404text {
+                font-family: 'Nova Cut', cursive;
+                color: #D39B53;
+                text-shadow: black 1px 0 15px;
+                font-size: 10rem;
+            }
+        </style>
+    </head>
+    <body class="bestBackGroundEver">
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <nav class="navbar navbar-dark bg-dark d-lg-none">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+            <div class="collapse bg-dark p-4 p-lg-2 navbar navbar-dark bg-dark navbar-expand-lg d-lg-block" id="navbarToggleExternalContent">
+                <ul class="navbar-nav w-100 d-flex">
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" href="{{ path('app_back_main') }}">
+                            {% include './assets/logo.svg.twig' %}
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link {% block nav_main_home %}{% endblock %}" href="{{ path('app_back_main') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% block nav_triathletes_list %}{% endblock %}" href="{{ path('app_back_triathlete_index') }}">Triathlètes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% block nav_coachs_list %}{% endblock %}" href="{{ path('app_back_coach_index') }}">Coachs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% block nav_trainings_list %}{% endblock %}" href="{{ path('app_back_training_index') }}">Entraînements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% block nav_reviews_list %}{% endblock %}" href="{{ path('app_back_review_index') }}">Commentaires</a>
+                    </li>
+                    <li  class="ms-lg-auto nav-item">
+                        <a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
+        <div class="p-3 m-5">
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

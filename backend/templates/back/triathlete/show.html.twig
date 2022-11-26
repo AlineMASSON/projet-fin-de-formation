@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Triathlete{% endblock %}
+
+{% block body %}
+    <h1 class="text-center title mb-4">Triathlete</h1>
+    <div class="bg-light p-4" id="rounded-table">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ triathlete.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ triathlete.user.lastname }}</td>
+                </tr>
+                <tr>
+                    <th>Prénom</th>
+                    <td>{{ triathlete.user.firstname }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ triathlete.user.email }}</td>
+                </tr>
+                <tr>
+                    <th>Date de naissance</th>
+                    <td>{{ triathlete.user.dateBirth | date('d-m-Y') }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ triathlete.user.description }}</td>
+                </tr>
+                <tr>
+                    <th>Lien photo de profil</th>
+                    <td>{{ triathlete.user.picture }}</td>
+                </tr>
+                <tr>
+                    <th>Genre</th>
+                    <td>{{ triathlete.user.gender == 1 ? 'Homme' : 'Femme' }}</td>
+                </tr>
+                <tr>
+                    <th>Ville</th>
+                    <td>{{ triathlete.user.city }}</td>
+                </tr>
+                <tr>
+                    <th>Palmares</th>
+                    <td>{{ triathlete.palmares }}</td>
+                </tr>
+                <tr>
+                    <th>Poids</th>
+                    <td>{{ triathlete.weight }}</td>
+                </tr>
+                <tr>
+                    <th>Taille</th>
+                    <td>{{ triathlete.size }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-flex p-2">
+        <a class="mt-2" href="{{ path('app_back_triathlete_index') }}">{% include './assets/return.svg.twig' %}</a>
+        <a class="pt-2" href="{{ path('app_back_triathlete_edit', {'id': triathlete.id}) }}">{% include './assets/modify.svg.twig' %}</a>
+        {{ include('back/triathlete/_delete_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,58 @@
+$light: #fff;
+$light-clear:rgba(255, 255, 255, 0.2);
+$dark: #262525;
+$dark-clear:rgba(38, 37, 37, 0.2);
+
+$light-main: #6D77B8;
+$light-alt-1: #75CBF0;
+$light-alt-2: #E5C3DE;
+$light-alt-3: #EB5781;
+$light-alt-4: #F2EA68;
+
+$dark-main: #D39B53;
+$dark-main-clear: rgba(211, 155, 83, 0.3);
+$dark-alt-1: #352665;
+$dark-alt-1-clear: rgba(53, 38, 101, 0.3);
+$dark-alt-2: #722b75;
+$dark-alt-3: #387568;
+$dark-alt-3-clear: rgba(56, 117, 104, 0.3);
+$dark-alt-4: #C84B51;
+$dark-alt-4-clear: rgba(200, 75, 81, 0.3);
+
+$color-text: $light;
+$color-hover: $dark;
+$color-back: $dark-clear;
+$color-main: $dark-main;
+$color-main-clear: $dark-main-clear;
+$color-alt-1: $dark-alt-1;
+$color-alt-1-clear: $dark-alt-1-clear;
+$color-alt-2: $dark-alt-2;
+$color-alt-3: $dark-alt-3;
+$color-alt-3-clear: $dark-alt-3-clear;
+$color-alt-4: $dark-alt-4;
+$color-alt-4-clear: $dark-alt-4-clear;
+
+$font-uptrain: 'Nova Cut', cursive;
+$font-text: 'K2D', sans-serif;
+
+$shadow-button: inset -4px -4px 8px $dark-clear, inset 4px 4px 8px $light-clear;
+$shadow-toggle: -2px -2px 4px $dark-clear, 2px 2px 4px $light-clear;
+$shadow-text: 2px 2px 4px $dark-clear, -2px -2px 4px $light-clear;
+
+// .dark {
+//   $color-text: $light;
+//   $color-main: $dark-main;
+//   $color-alt-1: $dark-alt-1;
+//   $color-alt-2: $dark-alt-2;
+//   $color-alt-3: $dark-alt-3;
+//   $color-alt-4: $dark-alt-4;
+// }
+
+// .light {
+//   $color-text: $dark;
+//   $color-main: $light-main;
+//   $color-alt-1: $light-alt-1;
+//   $color-alt-2: $light-alt-2;
+//   $color-alt-3: $light-alt-3;
+//   $color-alt-4: $light-alt-4;
+// }

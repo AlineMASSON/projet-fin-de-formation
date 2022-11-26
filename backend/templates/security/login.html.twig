@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion au Back Office{% endblock %}
+
+{% block body %}
+<div class="d-lg-flex">
+    <header class="d-flex align-items-center justify-content-center flex-lg-column col-lg-6">
+        <div class="mb-5">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284.1 347.93">
+                <defs>
+                    <style>
+                    svg {
+                        width: 70px;
+                    }
+                    .cls-1 {
+                        fill: #D39B53;
+                    }
+                    </style>
+                </defs>
+                <path class="cls-1" d="M227.28,173.97v57.99s0,115.98-113.64,115.98c0,0-113.64,0-113.64-115.98V86.98L85.23,0V231.95c0,57.99,85.23,57.99,85.23,0l56.82-57.99Z"/>
+                <path class="cls-1" d="M284.1,0l-56.82,57.99v57.99l-56.82,57.99V57.99h-56.82L170.46,0h113.64Z"/>
+            </svg>
+        </div>
+        <h1 class="text-center title">Back Office Uptrain</h1>
+    </header>
+    
+    
+    <form class="form-group w-lg-50 m-auto mt-5 d-flex flex-column col-lg-6" method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+    
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+    
+        <h2 class="h3 mb-3 font-weight-normal text-center">Formulaire de connexion</h2>
+        <label for="inputEmail" class="p-2">Email</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        <label for="inputPassword" class="p-2">Mot de passe</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}">
+        <button class="btn-lg btn-login mt-4" type="submit">
+            Se connecter
+        </button>
+    </form>
+</div>
+{% endblock %}

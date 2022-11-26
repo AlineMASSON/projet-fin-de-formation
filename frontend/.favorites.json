@@ -1,0 +1,34 @@
+[
+    {
+        "type": "Directory",
+        "name": "/var/www/html/projet-03-uptrain/frontend/src/actions",
+        "parent_id": null,
+        "workspaceRoot": "/var/www/html/projet-03-uptrain/frontend",
+        "workspacePath": "src/actions",
+        "id": "xEGovQ6bXnsPyJ2O"
+    },
+    {
+        "type": "Directory",
+        "name": "/var/www/html/projet-03-uptrain/frontend/src/reducers",
+        "parent_id": null,
+        "workspaceRoot": "/var/www/html/projet-03-uptrain/frontend",
+        "workspacePath": "src/reducers",
+        "id": "aHh67A5WxsgqrSo8"
+    },
+    {
+        "type": "Directory",
+        "name": "/var/www/html/projet-03-uptrain/frontend/src/store",
+        "parent_id": null,
+        "workspaceRoot": "/var/www/html/projet-03-uptrain/frontend",
+        "workspacePath": "src/store",
+        "id": "xvGFNMnSWZE7bqU3"
+    },
+    {
+        "type": "Directory",
+        "name": "/var/www/html/projet-03-uptrain/frontend/src/middlewares",
+        "parent_id": null,
+        "workspaceRoot": "/var/www/html/projet-03-uptrain/frontend",
+        "workspacePath": "src/middlewares",
+        "id": "4gS5s7LFMzO23hVH"
+    }
+]
