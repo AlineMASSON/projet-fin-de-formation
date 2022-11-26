@@ -10,4 +10,8 @@ J'ai tenu le rôle de lead dev front et je me suis occupée de la partie plannin
 
 ## :computer: Résultat
 
-Git clone pour voir le resultat :sparkles:
+Regarder la vidéo pour voir le resultat :sparkles:
+
+
+https://user-images.githubusercontent.com/96334573/204091174-f8a139d0-9d4a-48c5-8d4a-fd8cab76383d.mp4
+
